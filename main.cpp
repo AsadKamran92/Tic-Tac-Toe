@@ -1,7 +1,7 @@
 #include <iostream>
 
 //Makes the board
-char board[3][3] = {{'7','8','9'},{'4','5','6'},{'1','2','3'}};
+char board[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 
 //Prints the board
 void printBoard() {
@@ -19,17 +19,19 @@ void printBoard() {
 int main() {
   int turn = 0;
   bool gameOver = false;
+  int rowIn;
+  int colIn;
 
 
 
   std::cout << "Welcome to Tic-Tac-Toe (Samsung13M Version)" << std::endl;
-  std::cout << "Use the numerical keypad for the board" << std::endl;
+  std::cout << "(No Description)" << std::endl;
 
   printBoard();
 
 
 
-/*
+
   //Play game if there is not a win or loss
   while(gameOver == false) {
     //Checks if turn is player one
@@ -42,9 +44,24 @@ int main() {
       }
 
     //do the turn
+    std::cout << "pick a Row: ";
+    std::cin >> rowIn;
+    std::cout << "Pick a Collum: ";
+    std::cin >> colIn;
+
+    if(turn == 0){
+      board[rowIn][colIn] = 'X';
+      printBoard();
+    }
+    else{
+      board[rowIn][colIn] = 'O';
+      printBoard();
+    }
+
+
     turn++;
     turn %= 2; //Alternates turn
 
     }
-*/
+
 }
