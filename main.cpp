@@ -10,13 +10,14 @@ int main() {
   bool gameOver = false;
   int rowIn;
   int colIn;
+  bool turnOver = false;
 
 
 
   std::cout << "Welcome to Tic-Tac-Toe (Samsung13M Version)" << std::endl;
   std::cout << "(No Description)" << std::endl;
 
-  myGame.printBoard();
+
 
 
 
@@ -24,6 +25,7 @@ int main() {
 
   //Play game if there is not a win or loss
   while(gameOver == false) {
+    myGame.printBoard();
     //Checks if turn is player one
     if(turn == 0) {
       std::cout << "It is Player One's Turn!" << std::endl;
@@ -33,17 +35,17 @@ int main() {
       std::cout << "It is Player Two's Turn!" << std::endl;
       }
 
-    //do the turn
-    std::cout << "pick a Row: ";
-    std::cin >> rowIn;
-    std::cout << "Pick a Collum: ";
-    std::cin >> colIn;
-    myGame.makeMove(turn, rowIn, colIn);
-
+      while(turnOver == false) {
+        //do the turn
+        std::cout << "pick a Row: ";
+        std::cin >> rowIn;
+        std::cout << "Pick a Collum: ";
+        std::cin >> colIn;
+        turnOver = myGame.makeMove(turn, rowIn, colIn);
+      }
+      turnOver = false;
 
     turn++;
     turn %= 2; //Alternates turn
-
-    }
-
+  }
 }
