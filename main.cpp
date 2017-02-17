@@ -106,7 +106,7 @@ int main()
       }
     }
 
-    window.clear(sf::Color::White);
+    window.clear(sf::Color::Blue);
 
     for(int i=0; i<3; i++)
     {
