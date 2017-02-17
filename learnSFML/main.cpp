@@ -6,7 +6,7 @@
 
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(WIDE, HIGH), "SFML Hello WORLD");
+  sf::RenderWindow window(sf::VideoMode(WIDE, HIGH), "TicTacToe");
 
   while(window.isOpen())
   {
@@ -18,6 +18,10 @@ int main()
         window.close();
       }
     }
+    window.clear(sf::Color::White);
+
+
+
 
     window.display();
   }
